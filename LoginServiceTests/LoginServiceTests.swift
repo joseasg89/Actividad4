@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import Actividad4
+@testable import LoginService
 
-class Actividad4Tests: XCTestCase {
+class LoginServiceTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
