@@ -16,7 +16,8 @@ class ViewController: UIViewController {
         print("Okas")
         
         let request = URLRequest(url: URL(string: "\(Constantes.URL_DESA.apiWSLogin)?username=\(txtUser.text!)&password=\(txtpass.text!.toBase6())")!)
-        
+        //username: salvatore.isc@gmail.com
+        //password: salvapunk
         let task = URLSession.shared.dataTask(with: request) { (data, resp, error ) in
             if error != nil {
                 print("se produjo un error \(error)")
@@ -28,6 +29,11 @@ class ViewController: UIViewController {
                         if let status = jsonResult["status"]{
                             if status as! Int == 1 {
                                 print("WELCOME")
+                                DispatchQueue.main.async {
+                                    let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+                                    let controller = storyboard.instantiateViewController(withIdentifier: "VC2")
+                                    self.present(controller, animated: true, completion: nil)
+                                }
                             }
                         }
                     }catch{
